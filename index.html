@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <!-- Importar Fuente de Google-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Importamos hoja de estilos-->
+  <link href="css/style.css" rel="stylesheet">
+
+  <title>Calculadora de Innovación | Rotoplas</title>
+  <meta name="description" content="Esta herramienta te ayudará a definir el tipo de innovación que es tu iniciaitva" />
+  <meta name="keywords" content="calculadora, innovación" />
+  <meta name="author" content="isanchez"/>
+
+  <!-- JS PDF-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+
+</head>
+
+<body id="body12">
+
+
+  <!-- Nav Bar Image and text -->
+  <nav class="navbar navbar-expand-lg  navbar-dark" style="background-color: #002554;">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="img/rotoplas_logo.svg" class="d-inline-block align-top logo_brand"
+          alt=""> </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="indexen.html">English </span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="container">
+      <h1> Calculadora de Innovación</h1>
+    </div>
+  </section>
+
+
+
+
+  <!-- Form 1 Priorización de ejecución -->
+
+  <div id="accordion" class="myaccordion">
+
+    <div class="container mt-4">
+      <div class="card ">
+        <div class="card-header" id="headingOne"  >
+         <b> Datos Generales </b>        
+          <p class="card-text"><small class="text-muted"> Selecciona dentro de los apartados que sentencia concuerda con
+              tu iniciativa</small></p>
+        </div>
+
+
+
+        <div class="card-body">
+          <form>
+            <label for="nombre" class="form-label mt-2"> Nombre de la iniciativa</label>
+            <input type="text" class="form-control " id="nom" name="nom">
+
+
+            <label for="nombre" class="form-label mt-2"> ¿Cuál es el tipo de solución? </label>
+            <select class="form-control" id="tipsol">
+              <option hidden>Selecciona una opción</option>
+              <option value="1">Producto</option>
+              <option value="2">Servicio</option>
+              <option value="3">Modelo de negocio</option>
+            </select>
+
+
+            <label for="nombre" class="form-label mt-2"> ¿Cuál es la prioridad de la unidad de negocio? </label>
+            <select class="form-control" id="priosol">
+              <option hidden>Selecciona una opción</option>
+              <option value="1">Sin Conocimiento</option>
+              <option value="2">Baja</option>
+              <option value="3">Media</option>
+              <option value="4">Alta</option>
+            </select>
+
+            <label for="nombre" class="form-label mt-2"> ¿Cuál es el origen y alcance de la iniciativa? </label>
+            <select class="form-control" id="estrategia">
+              <option hidden>Selecciona una opción</option>
+              <option value="1">Sin Conocimiento</option>
+              <option value="2"> BUP 2022 </option>
+              <option value="3">Mapa de Ruta Tecnológica en rango de 1-3 años</option>
+              <option  value="3">Mapa de Ruta Tecnológica en rango de 3-5 años</option>
+            </select>
+
+            <label for="nombre" class="form-label mt-2"> ¿Cuál es el rango de inversión requiere la iniciativa?
+            </label>
+            <select class="form-control" id="inversion">
+              <option hidden>Selecciona una opción</option>
+              <option  value="6.666666667"> &#60 5M MXN </option>
+              <option value="13.33333333"> &#62 5M MXN & &lt; 35M MXN </option>
+              <option value="20"> &#62 35M MXN </option>
+            </select>
+
+
+            <label for="nombre" class="form-label mt-2"> Si conoces el posible impacto ($) de tu inciaitiva elige el rango que más se acerque</label>
+            <select class="form-control" id="impacto">
+              <option hidden>Selecciona una opción</option>
+              <option value="2.5"> &#60; 5M MXN </option>
+              <option value="5" > &#62 5M MXN & &#60; 10M MXN </option>
+              <option value="7.5"> &#62 10M MXN & &#60; 15M MXN </option>
+              <option value="10"> &#62 15M MXN & &#60; 25M MXN </option>
+              <option value="10" > &#62 25M MXN </option>
+            </select>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <!--Formulario 2! Nivel de Información -->
+    <div class="container mt-4">
+      <div class="card ">
+        <div class="card-header">
+          <b>Nivel de información</b>
+          <p class="card-text"><small class="text-muted"> Selecciona los elementos con los que cuentas</small></p>
+
+        </div>
+        <form>
+          <div class="card-body">
+
+            <div class="row">
+
+              <div class="form-check form-switch col">
+                <input class="form-check-input" type="checkbox" id="flex1">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Business Case</label>
+              </div>
+
+              <div class="form-check form-switch col">
+                <input class="form-check-input" type="checkbox" id="flex2"  >
+                <label class="form-check-label" for="flexSwitchCheckDefault">Identificación de los problemas/necesidades
+                  del usuario/cliente</label>
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="form-check form-switch col">
+                <input class="form-check-input" type="checkbox" id="flex3">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Perfil del usuario /cliente </label>
+              </div>
+
+
+              <div class="form-check form-switch col">
+                <input class="form-check-input" type="checkbox" id="flex4">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Tamaño de mercado</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-check form-switch col">
+                <input class="form-check-input" type="checkbox" id="flex5">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Comparación de la competencia (Benchmark)
+                  y/o soluciones sustitutas </label>
+              </div>
+
+
+              <div class="form-check form-switch col">
+                <input class="form-check-input" type="checkbox" id="flex6">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Normas aplicables </label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-check form-switch col">
+                <input class="form-check-input" type="checkbox" id="flex7">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Modelo de negocio / Oferta de valor
+                </label>
+              </div>
+
+
+              <div class="form-check form-switch col">
+                <input class="form-check-input" type="checkbox" id="flex8">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Prototipo </label>
+              </div>
+            </div>
+
+
+
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+    <!-- Formulario -->
+    <div class="container mt-4">
+      <div class="card">
+        <div class="card-header">
+          <b>Complejidad de la iniciativa</b> 
+          <p class="card-text"><small class="text-muted"> Selecciona dentro de los apartados que sentencia concuerda con
+              tu iniciativa</small></p>
+        </div>
+        <div class="card-body">
+
+          <form>
+
+            <label for="nombre" class="form-label mt-2"> ¿Complejidad Organizacional? </label>
+            <select class="form-control" id="complorg">
+              <option hidden>Selecciona una opción </option>
+              <option  value="2.5">3 áreas involucradas </option>
+              <option value="5">4-6 áreas involucradas</option>
+              <option value="7.5">Más de 6 áreas involucradas</option>
+            </select>
+
+
+            <label for="nombre" class="form-label mt-2"> ¿Cuál es el estado de los proveedores? </label>
+            <select class="form-control" id="provee">
+              <option hidden>Selecciona una opción</option>
+              <option value="2.5">Proveedores conocidos y con poca participación</option>
+              <option value="5">Participación importante y desarrollo de proveedores </option>
+              <option value="7.5">Externalización completa del proyecto </option>
+            </select>
+
+            <label for="nombre" class="form-label mt-2"> ¿Cuál es el objetivo de mercado de la iniciativa? </label>
+            <select class="form-control" id="mercado">
+              <option hidden>Selecciona una opción</option>
+              <option value="5">Servir a los mercados y clientes existentes</option>
+              <option  value="10">Ingresar a mercados adyacentes para atender a clientes nuevos </option>
+              <option value="15">Creación de nuevos mercados y dirigirse a nuevas necesidades de los clientes</option>
+            </select>
+
+            <label for="nombre" class="form-label mt-2"> ¿Cuál es el estado de la capacidad comercial? </label>
+            <select class="form-control" id="comercial">
+              <option hidden>Selecciona una opción</option>
+              <option  value="5">Cambios menores o nulos en la practica comercial</option>
+              <option value="10">Mejoras en las prácticas comerciales existentes</option>
+              <option value="15">Prácticas comerciales innovadoras</option>
+            </select>
+
+            <label for="nombre" class="form-label mt-2"> ¿Cuál es la madurez tecnológica de la solución? </label>
+            <select class="form-control" id="madutec">
+              <option hidden>Selecciona una opción</option>
+              <option value="5.83333333333333">Tecnología probada, lista para comercializarse y probada en el campo </option>
+              <option value="11.66666667">El modelo/prototipo ha sido probado en un entorno relevante/similar</option>
+              <option value="17.5">Nuevas tecnologías. La madurez es baja. Se requiere investigación básica</option>
+            </select>
+
+            <label for="nombre" class="form-label mt-2"> ¿Qué capacidades se necesitan para desarrollar la iniciativa?
+            </label>
+            <select class="form-control" id="capacidad">
+              <option hidden>Selecciona una opción</option>
+              <option  value="5.83333333333333">Capacidades existentes, productos o activos existentes</option>
+              <option value="11.66666667">Incorporar algunas capacidades nuevas (productos, tecnologías, etc)</option>
+              <option value="17.5">Capacidades nuevas y desarrollo de nuevos productos, tecnologías y activos</option>
+            </select>
+
+
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    <div class="container" id="cont">
+      <div class="row">
+        <div class="col-12">
+          <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop "
+            style="float: right;" id="ElemID">
+            Resultado
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" id="moda1">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Calculadora de innovación</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="bodyd">
+          <div style="text-align: center;">
+            <img src="img/rotoplas_logo_n.svg" alt="Rotoplas" width="200" height="100">
+          </div>
+          <br>
+          La iniciativa :
+          <p id="ini">
+
+          </p>
+
+          El tipo de Innnovación:
+          <p id="tipo">
+
+          </p>
+          Riesgo:
+          <p id="riesgo">
+
+          </p>
+          Incertidumbre:
+          <p id="incertidumbre">
+
+          </p>
+          <!-- Respuestas:
+           <p id="resultados">
+
+          </p>-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="generatepdf">Guardar Imagen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <!-- Scripts independientes -->
+
+  <script type="text/javascript" src="js/scripts.js"></script>
+  <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
+  <!-- Ionic Bib Iconos-->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
+<!-- alt+shift+f Alinear codigo -->

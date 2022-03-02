@@ -1,0 +1,37 @@
+body{
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.navbar{
+    background-color: #ffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+    min-height: 60px; 
+}
+
+
+#hero{
+    background-image: url('../img/blog.png');
+    background-size: cover;
+    padding-top: 30px;
+    min-height: 100px;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+
+}
+
+.logo_brand{
+    min-width: 90px;
+    max-width: 30px;
+}
+
+
+
+
+#cont{
+    margin: 1em auto 2em;
+}
+
+
+
+
