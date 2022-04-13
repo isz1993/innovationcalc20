@@ -14,7 +14,7 @@ const vimp = document.querySelector('#impacto');
 var cadena ="MDN"
 const selectElementl=document.querySelector('#tipsol');
 selectElementl.addEventListener('change', (event) =>{
-  if ( parseInt (event.target.value) !=1 ){
+  if ( parseInt (event.target.value) !=1 &&  parseInt (event.target.value)!=4 ){
     console.log(event.target.value);
     /**Ejemplo de Sweet alerts */
     Swal.fire({
@@ -33,6 +33,12 @@ selectElementl.addEventListener('change', (event) =>{
         /**Aquí es no  */
       }
     })
+  }else  if(parseInt (event.target.value) ==4 ){
+    Swal.fire({
+      icon: 'error',
+      title: 'Disculpa...',
+      text: 'Este tipo de iniciativas están fuera del alcance del portafolio de I+D+I, contacta a la oficina de TO o el WS de cadenas productivas',
+    })
   }
 
 });
@@ -45,6 +51,7 @@ const vmer = document.querySelector('#mercado');
 const vcomer = document.querySelector('#comercial');
 const vmadu = document.querySelector('#madutec');
 const vcap = document.querySelector('#capacidad');
+const vcert=document.querySelector('#certi_new');
 
 
 /** Etiquetas del modal */
@@ -115,19 +122,28 @@ myElem.onclick = function () {
 
 
 /**Decision de sí portafolio o no*/
-  if (vtipsol.selectedOptions[0].text1 != "Productos" &&  parseInt(vpri.value)>2 && parseInt(vestra.value)>0 &&parseInt(vimp.value)>=2.5) {
+  if (parseInt(vpri.value)<2 && parseInt(vestra.value)<=1 &&parseInt(vimp.value)<=2.5) {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'Comunicate con el PMO para poder alinear esta iniciativa ',
+      text: 'Comunicate con la PMO para poder alinear esta iniciativa, es posble que esta iniciativa tenga una prioridad baja o fuera del alcance de los equipos',
     })
   } 
   console.log(complejidad);
+  console.log("Aquí ")
+  console.log(vcert.value);
+
+  /**Agregar valor de norma, se agrega 6 meses la generalidad*/
+  var acum12=0; 
+  if (parseInt(vcert.value)>0){
+    console.log("AQUI ESTOY ")
+    acum12=6; 
+  }
 
   /**Seleccion de tipo de innovación */
   if (vmer.selectedIndex == 0 || vcap.selectedIndex == 0) {
   } else if (vmer.selectedIndex <= 2 && vcap.selectedIndex <= 2 && vinv.selectedIndex == 3) {
-    var decisión = parseFloat(getUserById(dic_tran, complejidad)["valor"]) + acumswitch;
+    var decisión = parseFloat(getUserById(dic_tran, complejidad)["valor"]) + acumswitch+acum12;
     vini.innerHTML = "<b>" + vnom.value + "</b>";
     vtip.innerHTML = "<b>Innovación Tranformacional</b> <br> <br>Complejidad <br> <b>" + labelcomp + "</b> <br> <br>Time to Market <br> <b>" + decisión + " meses</b>";
     vrie.innerHTML = "<b>Riesgo alto.</b> El desarrollo e implementación de esta iniciativa puede tener impactos importantes  en la organización: inverisón alta, tiempos de desarrollo largos, iteraciones continuas, equipos altamente enfocados.";
@@ -135,7 +151,7 @@ myElem.onclick = function () {
     //vres.innerHTML = vmer.selectedOptions[0].text + "; " + vcap.selectedOptions[0].text + "; " + vinv.selectedOptions[0].text + "; " + vimp.selectedOptions[0].text;
 
   } else if (vmer.selectedIndex == 1 && vcap.selectedIndex == 1) {
-    var decisión = parseFloat(getUserById(dic_inc, complejidad)["valor"]) + acumswitch;
+    var decisión = parseFloat(getUserById(dic_inc, complejidad)["valor"]) + acumswitch+acum12;
     vini.innerHTML = "<b>" + vnom.value + "</b>";
     vtip.innerHTML = "<b>Innovación Incremental</b> <br> <br>Complejidad <br> <b>" + labelcomp + "</b> <br> <br>Time to Market <br> <b>" + decisión + " meses</b>";
     vrie.innerHTML = "<b>Riesgo Bajo.</b> El impacto de esta iniciativa es muy limitado y la organización puede controlar los impactos negativos. No se compromete el recurso humano y financiero.";
@@ -143,20 +159,22 @@ myElem.onclick = function () {
     //vres.innerHTML = vmer.selectedOptions[0].text + "; " + vcap.selectedOptions[0].text + "; " + vinv.selectedOptions[0].text + "; " + vimp.selectedOptions[0].text;
 
   } else if (vmer.selectedIndex <= 2 && vcap.selectedIndex != 3) {
-    var decisión = parseFloat(getUserById(dic_ady, complejidad)["valor"]) + acumswitch;
+    var decisión = parseFloat(getUserById(dic_ady, complejidad)["valor"]) + acumswitch+acum12;
     vini.innerHTML = "<b>" + vnom.value + "</b>";
     vtip.innerHTML = "<b>Innovación Adyacente</b>  <br> <br>Complejidad <br> <b>" + labelcomp + "</b> <br> <br>Time to Market <br> <b>" + decisión + " meses</b>";
     vrie.innerHTML = "<b>Riesgo medio. </b> Esta iniciativa impacta altamente en un canal y categoría de la organización, el enfoque comercial y usuario son primordiales para asegurar el éxito de la iniciativa.";
     vinc.innerHTML = "<b>Incertidumbre Moderada. </b>  Se cuenta con gran parte de las capacidades necesarias para el desarrollo de la iniciativa. Existe información limitada de mercado y usuario.";
     //vres.innerHTML = vmer.selectedOptions[0].text + "; " + vcap.selectedOptions[0].text + "; " + vinv.selectedOptions[0].text + "; " + vimp.selectedOptions[0].text;  
   } else {
-    var decisión = parseFloat(getUserById(dic_tran, complejidad)["valor"]) + acumswitch;
+    var decisión = parseFloat(getUserById(dic_tran, complejidad)["valor"]) + acumswitch+acum12;
     vini.innerHTML = "<b>" + vnom.value + "</b>";
     vtip.innerHTML = "<b>Innovación Tranformacional</b> <br> <br>Complejidad <br> <b>" + labelcomp + "</b> <br> <br>Time to Market <br> <b>" + decisión + " meses</b>";
     vrie.innerHTML = "<b>Riesgo alto.</b> El desarrollo e implementación de esta iniciativa puede tener impactos importantes  en la organización: inverisón alta, tiempos de desarrollo largos, iteraciones continuas, equipos altamente enfocados.";
     vinc.innerHTML = "<b>Incertidumbre Alta.</b> La información con la que se cuenta es muy limitada, la organización no cuenta con experiencia, es importante dimensionar el mercado, el tipo de usuario y el tipo de capacidad /tecnologías necesarias para el desarrollo y ejecución de la iniciativa.";
     //vres.innerHTML = vmer.selectedOptions[0].text + "; " + vcap.selectedOptions[0].text + "; " + vinv.selectedOptions[0].text + "; " + vimp.selectedOptions[0].text;
   }
+
+  
 }
 
 
